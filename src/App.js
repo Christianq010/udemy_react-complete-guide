@@ -14,17 +14,6 @@ class App extends Component {
     showPersons: false
   }
 
-  switchNameHandler = () => {
-    // console.log('was clicked');
-    this.setState ({
-      person: [
-        {name: 'Wow', age: 54},
-        {name: 'Much', age: 67},
-        {name: 'Doge', age: 82}
-      ]
-    })
-  }
-
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState({showPersons: !doesShow});
@@ -38,6 +27,13 @@ class App extends Component {
         {name: 'Doge', age: 82}
       ]
     })
+  }
+
+  deletePersonHandler = (personsIndex) => {
+    // create a new array and inherit our person array objects
+    const person = [...this.state.person];
+    person.splice(personsIndex, 1);
+    this.setState({person: person});
   }
 
   render() {
@@ -55,8 +51,9 @@ class App extends Component {
     if (this.state.showPersons) {
       person = (
         <div>
-          {this.state.person.map(persons => {
-            return <Person 
+          {this.state.person.map((persons, index) => {
+            return <Person
+                    click={ () => this.deletePersonHandler(index)}
                     name={persons.name} 
                     age={persons.age} />
           })}
