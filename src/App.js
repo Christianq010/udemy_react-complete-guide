@@ -8,7 +8,8 @@ class App extends Component {
     person: [
       {name: 'Max', age: 22, id: '23ttyu'},
       {name: 'Manu', age: 27, id: '42sds'},
-      {name: 'Eric', age: 32, id: '456c'}
+      {name: 'Eric', age: 32, id: '456c'},
+      {name: 'Adam', age: 12, id: '456234'}
     ],
     otherState: 'some other state',
     showPersons: false
@@ -45,9 +46,10 @@ class App extends Component {
   render() {
 
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: '#4DB6AC',
       font: 'inherit',
-      border: '1px solid blue',
+      color: 'white',
+      border: '1px solid #004D40',
       padding: '8px',
       cursor: 'pointer'
     };
@@ -67,6 +69,8 @@ class App extends Component {
           })}
         </div>
       );
+
+      style.backgroundColor = '#EF5350';
     }
 
     return (
