@@ -6,7 +6,7 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     person: [
-      {name: 'Max', age: 22, id: '23ttyu'},
+      {name: 'Max', age: 22, id: '23tty'},
       {name: 'Manu', age: 27, id: '42sds'},
       {name: 'Eric', age: 32, id: '456c'},
       {name: 'Adam', age: 12, id: '456234'}
@@ -45,15 +45,8 @@ class App extends Component {
 
   render() {
 
-    const style = {
-      backgroundColor: '#4DB6AC',
-      font: 'inherit',
-      color: 'white',
-      border: '1px solid #004D40',
-      padding: '8px',
-    };
-
     let person = null;
+    let btnClass = '';
 
     if (this.state.showPersons) {
       person = (
@@ -69,7 +62,8 @@ class App extends Component {
         </div>
       );
 
-      style.backgroundColor = '#EF5350';
+    btnClass = classes.Red;
+
     }
 
     const assginedClasses = [];
@@ -85,8 +79,9 @@ class App extends Component {
         <div className={classes.App}>
           <h1>Hi, I am a React App</h1>
           <p className={assginedClasses.join(' ')}>This is just a paragraph</p>
-          <button style={style} 
-                  onClick={this.togglePersonsHandler}>Toggle Persons</button>
+          <button
+            className={btnClass}
+            onClick={this.togglePersonsHandler}>Toggle Persons</button>
           {person}
         </div>
     );
