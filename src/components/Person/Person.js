@@ -2,7 +2,6 @@ import React from 'react';
 
 import classes from './Person.scss';
 
-
 const person = (props) => {
     return (
         <div className={classes.Person}>
