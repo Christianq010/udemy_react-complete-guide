@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Aux from '../../HOC/HOC';
 import classes from './Cockpit.scss';
 
 // Stateless Component
@@ -18,14 +19,14 @@ const cockpit = (props) => {
     }
 
     return (
-        <div className={classes.cockpit}>
+        <Aux>
             <h1>{props.apptitle}</h1>
                 <p className={assginedClasses.join(' ')}>This is just a paragraph</p>
                 <button
                     className={btnClass}
                     onClick={props.clicked}>Toggle Persons
                 </button>
-        </div>
+        </Aux>
     );
 }
 
