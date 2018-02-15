@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.scss';
 
-import Person from './../components/Person/Person';
+import Persons from './../components/Persons/Persons';
 
 class App extends Component {
   state = {
@@ -51,14 +51,11 @@ class App extends Component {
     if (this.state.showPersons) {
       person = (
         <div>
-          {this.state.person.map((persons, index) => {
-            return <Person
-                    click={ () => this.deletePersonHandler(index)}
-                    name={persons.name} 
-                    age={persons.age} 
-                    key={persons.id}
-                    changed={ (event) => this.nameChangedHandler(event, persons.id)}/>
-          })}
+          <Persons 
+            person={this.state.person}
+            clicked={this.deletePersonHandler}
+            changed={this.nameChangedHandler}>
+          </Persons>
         </div>
       );
 
