@@ -2,6 +2,7 @@ import React from 'react';
 
 import classes from './Cockpit.scss';
 
+// Stateless Component
 const cockpit = (props) => {
     const assginedClasses = [];
     let btnClass = '';
